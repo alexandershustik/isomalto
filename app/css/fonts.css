@@ -1,0 +1,14 @@
+@font-face{
+	font-family: 'bebasReg';
+	src: url('../fonts/BebasNeueRegular/BebasNeueRegular.eot');
+	src: local('☺'), url('../fonts/BebasNeueRegular/BebasNeueRegular.woff') format('woff'), url('../fonts/BebasNeueRegular/BebasNeueRegular.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'bebasBold';
+	src: url('../fonts/BebasNeueBold/BebasNeueBold.eot');
+	src: local('☺'), url('../fonts/BebasNeueBold/BebasNeueBold.woff') format('woff'), url('../fonts/BebasNeueBold/BebasNeueBold.ttf') format('truetype');
+	font-weight: bold;
+	font-style: normal;
+}
