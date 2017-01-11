@@ -4,6 +4,8 @@ $accent: #96b71d
 $bg: #305b3c
 $mite: #969696
 
+$tablet: 'only screen and (max-width: 1024px)'
+$mobile: 'only screen and (max-width: 768px)'
 html, body
 	margin: 0
 	padding: 0
@@ -12,3 +14,139 @@ html, body
 	margin: 0 auto
 h1
 	font-family: bebasReg
+.main-menu
+	display: flex
+	justify-content: space-between
+	align-items: center
+	margin: 10px 60px
+	@media #{$tablet}
+		margin: 10px
+	@media #{$mobile}
+		display: none
+	.logo-wrap
+		display: inline-block
+	.list-wrap
+		display: inline-block
+		ul
+			margin: 0
+			margin-bottom: 2px
+			margin-right: 4px
+			padding: 0
+			list-style: none
+		li
+			display: inline-block
+			font-family: bebasBold
+			font-size: 18px
+			margin: 0 14px
+			@media #{$tablet}
+				margin: 0 5px
+				font-size: 14px
+			&:last-child
+				margin-right: 0
+		a
+			color: $mite
+			text-decoration: none
+			transition: .2s
+			&:hover
+				color: $accent
+		.shop-link
+			font-size: 22px
+			a
+				color: $bg
+				padding: 10px 32px 6px
+				border: 2px solid $bg
+				border-radius: 30px
+.main-mobile-menu
+	display: none
+	margin: 10px
+	justify-content: space-between
+	align-items: center	
+	@media #{$mobile}
+		display: flex
+	.logo-wrap
+		margin: 0
+		padding: 0
+		img
+			height: 40px
+			margin: 0
+			padding: 0
+	.list-wrap
+		display: block
+		position: absolute
+		top: 60px
+		left: 0
+		width: 100%
+		height: 0
+		overflow: hidden
+		transition: .2s
+		&.open
+			height: 220px
+		ul
+			margin: 20px 10px
+			padding: 0
+			li
+				margin: 20px 0
+				&:first-child,
+				&:last-child
+					margin: 0
+				a
+					color: $bg
+					text-decoration: none
+					font-family: bebasBold
+					font-size: 20px
+	.mobile-menu-btn
+		display: flex
+		justify-content: space-between
+		align-items: center
+		font-family: bebasBold
+		font-size: 18px
+		color: $bg
+		overflow: hidden
+		&>span
+			position: relative
+			left: 0
+			transition: .2s
+			opacity: 1
+		&.active
+			&>span
+				left: 50px
+				opacity: 0
+	.mob-menu-icon
+		width: 30px
+		height: 40px
+		display: flex
+		align-content: space-around
+		flex-wrap: wrap
+		align-items: center
+		margin-left: 10px
+		position: relative
+		overflow: hidden
+		span
+			width: 100%
+			height: 5px
+			background-color: $bg
+			display: block
+			position: relative
+			transition: .2s
+		span:nth-child(1)
+		span:nth-child(2)
+			left: 0
+			opacity: 1
+		span:nth-child(3)
+		&.active
+			span:nth-child(1)
+				transform: rotate(45deg)
+				position: absolute
+				top: 0
+				bottom: 0
+				margin: auto
+			span:nth-child(2)
+				left: 50px
+				opacity: 0
+			span:nth-child(3)
+				transform: rotate(-45deg)
+				position: absolute
+				top: 0
+				bottom: 0
+				margin: auto
+

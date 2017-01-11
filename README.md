@@ -8,5 +8,12 @@ mkdir app app/css app/fonts app/img app/jade app/js app/libs app/sass
 touch app/jade/index.jade app/sass/main.sass app/js/common.js
 touch app/index.html
 echo "<h1>Well done</h1>" >> app/index.html
+nano .bowerrc
+
+{
+    "directory" : "app/libs/"
+}
+
+bower i jquery
 ║                                         ║
 ╚═════════════════════════════════════════╝
