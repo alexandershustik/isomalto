@@ -18,9 +18,15 @@ h1
 	display: flex
 	justify-content: space-between
 	align-items: center
-	margin: 10px 60px
+	position: fixed
+	top: 0
+	background-color: #fff
+	width: 100%
+	padding: 10px 60px
+	max-width: 1920px
+	box-sizing: border-box
 	@media #{$tablet}
-		margin: 10px
+		padding: 10px
 	@media #{$mobile}
 		display: none
 	.logo-wrap
@@ -58,9 +64,13 @@ h1
 				border-radius: 30px
 .main-mobile-menu
 	display: none
-	margin: 10px
+	padding: 10px
 	justify-content: space-between
-	align-items: center	
+	align-items: center
+	position: fixed
+	top: 0
+	background-color: #FFF
+	width: 100%
 	@media #{$mobile}
 		display: flex
 	.logo-wrap
@@ -79,6 +89,7 @@ h1
 		height: 0
 		overflow: hidden
 		transition: .2s
+		background-color: #FFF
 		&.open
 			height: 220px
 		ul
@@ -102,6 +113,7 @@ h1
 		font-size: 18px
 		color: $bg
 		overflow: hidden
+		padding-right: 20px
 		&>span
 			position: relative
 			left: 0
@@ -149,4 +161,158 @@ h1
 				top: 0
 				bottom: 0
 				margin: auto
+.main-slider-block
+	height: calc( 100vh - 84px)
+	margin-top: 84px
+	width: 100%
+	background-color: #fff
+	position: relative
+	box-sizing: border-box
+	overflow: hidden
+.main-slider-wrap
+	z-index: 0
+.slide-wrap
+	height: calc( 100vh - 84px)
+	position: absolute
+	top: 0
+	left: 100%
+	transition: 1s
+	z-index: -1
+	opacity: 0
+	text-align: right
+	&.active
+		left: 0
+		z-index: 10
+		opacity: 1
+	&.left
+		left: -100%
+		z-index: 0
+	img
+		object-fit: cover
+.text-block
+	position: absolute
+	top: 44%
+	left: 22%
+.slide-header
+	font-size: 90px
+	font-family: bebasReg
+	color: $accent
+	margin: 0
+	padding: 0
+.slider-text
+	font-family: bebasReg
+	color: $mite
+	font-size: 27px
+	display: block
+	margin-top: 18px
+	line-height: 26px
+	margin-bottom: 64px
+	span
+		font-family: arial
+		font-size: 16px
+		display: block
+.slider-present-btn
+	font-family: bebasReg
+	color: $accent
+	border-radius: 50px
+	border: 2px solid $accent
+	padding: 20px 33px
+	text-decoration: none
+	font-size: 27px
+	margin-right: -30px
+	cursor: pointer
+.arrows-wrap
+	width: 100%
+	display: flex
+	justify-content: space-between
+	align-items: center
+	padding: 0 60px
+	z-index: 10
+	box-sizing: border-box
+	position: absolute
+	left: 0
+	top: calc(50% - 58px)
+	span
+		width: 60px
+		height: 117px
+	.left
+		background-image: url("../img/slider-arrow.png")
+	.right
+		background-image: url("../img/slider-arrow.png")
+		transform: rotate(180deg)
+.slider-bottom-info
+	position: absolute
+	bottom: 0
+	left: 0
+	display: flex
+	justify-content: space-between
+	align-items: center
+	width: 100%
+.social-wrap
+	margin-bottom: 65px
+	margin-right: 64px
+.social-btns
+	display: inline-block
+	a
+		width: 32px
+		height: 32px
+		display: inline-block
+		background-color: $mite
+		margin: 0 4px
+		&:hover
+			background-color: $accent
+.social-vk
+	background: url("../img/icon-vk.png") no-repeat center center
+.social-fb
+	background: url("../img/icon-fb.png") no-repeat center center
+.social-inst
+	background: url("../img/icon-inst.png") no-repeat center center
+.social-phone
+	font-size: 30px
+	font-family: bebasReg
+	color: $mite
+	margin: 0
+	padding: 0
+	display: inline
+	margin-right: 15px
+.social-copyrights
+	margin: 0
+	padding: 0
+	font-family: arial
+	color: $mite
+	font-size: 12px
+	margin-top: 13px
+	a
+		color: $mite
+		&:hover
+			color: $accent
+.slide-recipe-wrap
+	margin-left: 116px
+	margin-bottom: 47px 
+.slide-recipe
+	font-size: 27px
+	color: $mite
+	font-family: bebasReg
+	text-decoration: none
+	position: relative
+	margin-left: 18px
+	&:before
+		content: url(../img/icon-recipe.png)
+		width: 54px
+		height: 54px
+		position: absolute
+		top: 0
+		bottom: 0
+		margin: auto
+		left: -71px
+	&:hover
+		color: $accent
+		
+
+
+
+
+
+
+
 
