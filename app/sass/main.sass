@@ -263,6 +263,7 @@ h1
 		display: inline-block
 		background-color: $mite
 		margin: 0 4px
+		cursor: pointer
 		&:hover
 			background-color: $accent
 .social-vk
@@ -311,13 +312,15 @@ h1
 		left: -71px
 	&:hover
 		color: $accent
+	&.mod:before
+		content: url(../img/icon-product.png)
 .about-slider-block
 	height: 100vh
 	width: 100%
 	position: relative
 	box-sizing: border-box
 	overflow: hidden
-	background: url(../img/about-bg.jpg) no-repeat top center
+	background: url(../img/about-bg.jpg) no-repeat top center, url(../img/about-bottom-bg.jpg) repeat-x bottom left
 	position: relative
 .about-slider-header
 	text-align: center
@@ -393,8 +396,188 @@ h1
 	.right
 		background-image: url("../img/about-arrow.png")
 		transform: rotate(180deg)
-
-
+.about-indicators-wrap
+	position: absolute
+	bottom: 287px
+	text-align: center
+	display: block
+	margin: 0 auto
+	left: 0
+	right: 0
+	span
+		width: 10px
+		height: 10px
+		border: 2px solid $bg
+		display: inline-block
+		border-radius: 50%
+		margin: 0 4px
+		position: relative
+		cursor: pointer
+		&.active
+			cursor: default
+			pointer-events: none
+			&:before
+				content: ''
+				width: 10px
+				height: 10px
+				position: absolute
+				background: #fff
+				border-radius: 50%
+				top: 0
+				bottom: 0
+				left: 0
+				right: 0
+				margin: auto
+			&:after
+				content: ''
+				width: 6px
+				height: 6px
+				position: absolute
+				background: $bg
+				border-radius: 50%
+				top: 0
+				bottom: 0
+				left: 0
+				right: 0
+				margin: auto
+.about-social
+	position: absolute
+	bottom: 2px
+	right: -7px
+	text-align: right
+.product-block
+	height: 100vh
+	width: 100%
+	position: relative
+	box-sizing: border-box
+	overflow: hidden
+	background: #edeced
+.product-header
+	position: absolute
+	top: 70px
+	left: 23%
+	width: 450px
+	font-size: 60px
+	color: $accent
+	font-family: bebasReg
+	span
+		color: $mite
+		font-family: arial
+		font-size: 16px
+		margin-top: 10px
+		display: block
+		text-align: left
+.product-wrap
+	width: 100%
+	height: 645px
+	background: url("../img/product-bg.jpg") repeat
+	margin-top: 270px
+	position: relative
+	overflow: hidden
+.product-tabs-wrap
+	width: 1210px
+	height: 440px
+	background-color: #FFF
+	position: absolute
+	top: 50px
+	left: 710px
+	z-index: 2
+.product-tabs-btns-wrap
+	margin: 35px 50px 0
+	padding: 0 0 25px
+	list-style: none
+	width: 711px
+	border-bottom: 1px solid $mite
+	li
+		display: inline-block
+		padding: 0 10px
+		&:first-child
+			padding-left: 0
+		&:last-child
+			padding-right: 0
+		button
+			border: none
+			background: #fff
+			font-family: bebasReg
+			color: $mite
+			transition: .2s
+			margin: 0
+			padding: 0
+			font-size: 18px
+			position: relative
+			cursor: pointer
+			outline: none
+			&:after
+				content: ''
+				width: 100%
+				height: 1px
+				background: $mite
+				position: absolute
+				bottom: 2px
+				left: 0
+				transition: .2s
+			&.active, &:hover
+				color: $accent
+				text-decoration: none
+				cursor: default
+				&:after
+					background: transparent
+			&.active
+				pointer-events: none
+.product-tab-desc-wrap
+	margin: 37px 50px 0
+	width: 711px
+	display: none
+	&.active
+		display: block
+.product-pic
+	position: absolute
+	top: 0
+	left: -100%
+	transition: .2s
+	&.active
+		left: 0
+.product-desc-row
+	display: flex
+	justify-content: space-between
+	align-items: center
+	margin-bottom: 48px
+.product-desc-col
+	display: inline-block
+	font-family: arial
+	color: $mite
+	font-size: 16px
+	p
+		margin: 0
+	.tab-desc-header
+		font-weight: bold
+		margin-bottom: 10px
+		&.mod
+			margin-bottom: 40px
+			position: relative
+			&:after
+				content: ''
+				width: 30px
+				height: 1px
+				background: $accent
+				position: absolute
+				bottom: -21px
+				left: 3px
+	.tab-desc-text
+		margin-bottom: 10px
+	.tab-desc-ul
+		margin: 0
+		padding: 0
+		margin-left: 15px
+.icn-btn-wrap
+	position: absolute
+	bottom: 72px
+	left: 118px
+.product-social
+	position: absolute
+	bottom: 60px
+	right: 60px
+	text-align: right
 
 
 

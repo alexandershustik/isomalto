@@ -43,15 +43,24 @@ $('.arrows-wrap span.right').click(function(){
 var aboutSlideDomCount = $('.about-slide[data-slide]').length;
 aboutActiveSlide = 0;
 
-aboutInterval =  setInterval( aboutChangeSlide, 4000);
+for( i = 0; i < aboutSlideDomCount; i++){
+	$('.about-indicators-wrap').append('<span data-indicator='+i+'></span>');
+}
+
+aboutInterval =  setInterval( aboutChangeSlide, 5000);
 
 function aboutChangeSlide(){
 	slideDomEl = '.about-slide[data-slide=' + aboutActiveSlide + ']';
-
+	
+	slideDomInd = '.about-indicators-wrap span[data-indicator=' + aboutActiveSlide + ']';
+	
 	$('.about-slide').removeClass('active');
 	$('.about-slide').removeClass('left');
 
+	$('.about-indicators-wrap span').removeClass('active');
+
 	$(slideDomEl).addClass('active');
+	$(slideDomInd).addClass('active');
 
 	(aboutActiveSlide <= 0) ?
 		$('.about-arrows-wrap span.left').attr('data-slide', aboutSlideDomCount - 1) :
@@ -75,18 +84,34 @@ $('.about-arrows-wrap span.left').click(function(){
 	aboutActiveSlide = $('.about-arrows-wrap span.left').attr('data-slide');
 	aboutInterval = clearInterval(aboutInterval);
 	aboutChangeSlide();
-	aboutInterval =  setInterval( aboutChangeSlide, 4000);
+	aboutInterval =  setInterval( aboutChangeSlide, 5000);
 });
 $('.about-arrows-wrap span.right').click(function(){
 	aboutActiveSlide = $('.about-arrows-wrap span.right').attr('data-slide');
 	aboutInterval = clearInterval(aboutInterval);
 	aboutChangeSlide();
-	aboutInterval =  setInterval( aboutChangeSlide, 4000);
+	aboutInterval =  setInterval( aboutChangeSlide, 5000);
 });
 
+$('.about-indicators-wrap span').click(function(){
+	aboutActiveSlide = $(this).attr('data-indicator');
+	console.log(aboutActiveSlide);
+	aboutInterval = clearInterval(aboutInterval);
+	aboutChangeSlide();
+	aboutInterval =  setInterval( aboutChangeSlide, 5000);
+});
 
+//product-tabs
 
+$('.product-tabs-btns-wrap li button').click(function(){
+	activeTab = $(this).attr('data-href');
 
+	$('.product-tabs-btns-wrap li button').removeClass('active');
+	$('.product-tab-desc-wrap').removeClass('active');
+	$('.product-pic').removeClass('active');
 
-
+	$('.product-tabs-btns-wrap li button[data-href = '+ activeTab +']').addClass('active');
+	$('.product-tab-desc-wrap[data-href = '+ activeTab +']').addClass('active');
+	$('.product-pic[data-href = '+ activeTab +']').addClass('active');
+})
 
