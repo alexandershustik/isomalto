@@ -578,7 +578,283 @@ h1
 	bottom: 60px
 	right: 60px
 	text-align: right
-
-
-
-
+.test-block
+	height: 100vh
+	width: 100%
+	position: relative
+	box-sizing: border-box
+	overflow: hidden
+	background: url(../img/test-bg.jpg) repeat
+.test-block-wrap
+	position: absolute
+	top: 160px
+	left: 0
+	right: 0
+	margin: auto
+	width: 800px
+	height: 580px
+	font-size: 0
+	&:before
+		content: url(../img/test-pic.png)
+		position: absolute
+		top: 140px
+		left: -330px
+.test-left-col
+	width: 50%
+	background: #fff
+	height: 100%
+	display: inline-block
+	font-size: 16px
+	vertical-align: top
+.test-right-col
+	width: 50%
+	background: $bg
+	display: inline-block
+	height: 100%
+	font-size: 16px
+	vertical-align: top
+.test-header
+	font-family: bebasReg
+	font-size: 38px
+	color: $accent
+	margin: 46px 0 19px
+	text-align: center
+	span
+		color: #fff
+.test-desc
+	font-family: arial
+	color: $mite
+	text-align: center
+	margin: 0 0 30px
+	padding: 0 50px
+	&.mod
+		margin: 80px 0 50px
+		position: relative
+		&:before
+			content: ''
+			width: 30px
+			height: 2px
+			background: $accent
+			position: absolute
+			left: 0
+			right: 0
+			margin: auto
+			top: -26px
+		&:after
+			content: ''
+			width: 30px
+			height: 2px
+			background: $accent
+			position: absolute
+			left: 0
+			right: 0
+			margin: auto
+			bottom: -26px
+	&.list
+		margin: 0
+.test-list
+	margin: 0
+	padding: 0 110px
+	list-style: none
+	font-family: arial
+	color: $mite
+	text-align: center
+.test-form
+	margin: 80px 44px 0
+	&>*
+		display: block
+		margin: 22px 0
+		width: 100%
+		box-sizing: border-box
+		height: 24px
+		outline: none
+		background: none
+		border: none
+		border-bottom: 1px solid $mite
+		color: $mite
+		font-family: arial
+		font-size: 14px
+	input[placeholder]
+		font-family: bebasReg
+		font-size: 18px
+		color: $mite
+	textarea[placeholder]
+		font-family: bebasReg
+		font-size: 18px
+		color: $mite
+	textarea
+		height: 130px
+		resize: none
+	input[type=submit]
+		border-bottom: 0
+		font-family: bebasReg
+		font-size: 22px
+		color: #fff
+		border: 1px solid $accent
+		display: block
+		width: auto
+		margin: 45px auto 0
+		padding: 13px 32px 28px
+		border-radius: 20px
+		transition: .2s
+		&:hover
+			background: $accent
+.test-social
+	position: absolute
+	bottom: 60px
+	right: 60px
+	text-align: right
+.script-block
+	height: calc( 100vh - 30px)
+	width: 100%
+	position: relative
+	box-sizing: border-box
+	overflow: hidden
+	background: url(../img/script-bg.png) repeat-x #f6f6f9
+	background-position-y: 810px
+	padding-top: 86px
+.script-row
+	font-size: 0
+	height: 500px
+	opacity: 0
+	position: absolute
+	left: 0
+	width: 100%
+	transition: .2s
+	z-index: 0
+	&.active
+		opacity: 1
+		z-index: 1
+.script-desc
+	width: 50%
+	height: 100%
+	display: inline-block
+.script-video
+	width: 50%
+	background: tomato
+	height: 100%
+	display: inline-block
+.script-tabs-wrap
+	width: 100%
+	height: 230px
+	margin-top: 500px
+.script-tabs
+	padding: 0
+	margin: 0
+	list-style: none
+	width: 100%
+	height: 100%
+	display: flex
+	justify-content: space-around
+	align-items: center
+	padding: 0 62px
+	box-sizing: border-box
+	li
+		display: inline-block
+		margin: 0 auto
+		text-align: center
+		vertical-align: top
+		position: relative
+		img
+			width: 100%
+		.hov-txt 
+			position: absolute
+			width: 100%
+			height: 100%
+			background: rgba(182,148,90,.8)
+			top: 0
+			left: 0
+			opacity: 0
+			transition: .2s
+			cursor: pointer
+			display: flex
+			justify-content: space-around
+			align-items: center
+			p
+				margin: 0
+				padding: 0
+				color: #fff
+				font-family: arial
+				font-size: 16px
+				line-height: 25px
+			span
+				display: block
+				font-family: bebasReg
+				font-size: 20px
+				text-decoration: underline
+				margin-top: 30px
+		a:hover .hov-txt, a.active .hov-txt
+			opacity: 1
+.script-desc
+	font-size: 16px
+	overflow: scroll
+	padding: 0 62px
+	box-sizing: border-box
+	position: relative
+.script-desc-header
+	margin: 48px 0 38px
+	font-family: bebasReg
+	font-size: 27px
+	color: $mite
+.script-desc-tabs
+	margin: 0
+	padding: 0
+	list-style-type: none
+	li
+		display: inline-block
+		margin-right: 10px
+		a
+			font-family: bebasReg
+			font-size: 18px
+			color: $mite
+			text-decoration: underline
+			transition: .2s
+			&.active, &:hover
+				color: $accent
+				text-decoration: none
+.script-desc-tab-wrap
+	position: relative
+	margin-top: 25px
+	border-top: 1px solid $mite
+.script-desc-tab
+	position: absolute
+	top: 0
+	left: 0
+	opacity: 0
+	width: 100%
+	font-family: arial
+	font-size: 16px
+	color: $mite
+	transition: .2s
+	z-index: -1
+	&.active
+		opacity: 1
+		z-index: 1
+.script-video iframe
+	width: 100%
+	height: 100%
+	object-fit: cover
+	z-index: 1
+.script-social
+	position: absolute
+	bottom: 20px
+	right: 60px
+	text-align: right
+.map-block
+	height: calc(100vh - 86px)
+	width: 100%
+	position: relative
+	box-sizing: border-box
+	overflow: hidden
+	background: $bg
+.map
+	width: 100%
+	height: 100%
+	position: absolute
+	top: 0
+	left: 0
+.contacts-wrap
+	z-index: 1
+	position: absolute
+	top: 0
+	right: 0

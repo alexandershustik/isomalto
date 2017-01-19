@@ -113,5 +113,68 @@ $('.product-tabs-btns-wrap li button').click(function(){
 	$('.product-tabs-btns-wrap li button[data-href = '+ activeTab +']').addClass('active');
 	$('.product-tab-desc-wrap[data-href = '+ activeTab +']').addClass('active');
 	$('.product-pic[data-href = '+ activeTab +']').addClass('active');
-})
+});
+
+// script-desc-tabs
+
+$('.script-desc-tabs a').click(function(){
+	activeTab = $(this).attr('data-href');
+
+	$('.script-desc-tabs a').removeClass('active');
+	$('.script-desc-tab').removeClass('active');
+
+	$('.script-desc-tabs a[data-href = '+ activeTab +']').addClass('active');
+	$('.script-desc-tab[data-href = '+ activeTab +']').addClass('active');
+});
+
+// script-tabs
+
+$('.script-tabs a').click(function(){
+	activeTab = $(this).attr('data-href');
+
+	$('.script-tabs a').removeClass('active');
+	$('.script-row').removeClass('active');
+
+	$('.script-tabs a[data-href = '+ activeTab +']').addClass('active');
+	$('.script-row[data-href = '+ activeTab +']').addClass('active');
+});
+
+// map
+
+	function initMap() {
+	// Create a map object and specify the DOM element for display.
+		var map = new google.maps.Map(document.getElementById('map'), {
+			scrollwheel: false,
+			zoom: 12,
+			center: {lat: 55.718889, lng: 38.626745},
+			disableDefaultUI: true,
+			scrollwheel: false,
+			draggable: false,
+			panControl: false,
+			mapTypeControl: false,
+			streetViewControl: false,
+			zoomControl: true,
+			zoomControlOptions: {
+				position: google.maps.ControlPosition.LEFT_TOP
+			},
+		});
+
+		var styles = [
+		  {
+		    stylers: [
+		      { hue: "#8bd434" },
+		      { saturation: -60 }
+		    ]
+		  }
+		];
+
+		map.setOptions({styles: styles});
+
+		var mark = new google.maps.Marker({
+			position: {lat: 55.718889, lng: 38.626745},
+			map: map,
+			icon: '../img/map-marker.png'
+		});
+	}
+
 
