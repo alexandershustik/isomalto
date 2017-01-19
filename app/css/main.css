@@ -1076,5 +1076,100 @@ h1 {
 .contacts-wrap {
   z-index: 1;
   position: absolute;
-  top: 0;
-  right: 0; }
+  top: 113px;
+  right: 0;
+  background: #305b3c;
+  width: 700px;
+  height: 590px;
+  font-size: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; }
+
+.feedback-wrap {
+  display: inline-block;
+  width: 45%;
+  height: 100%;
+  font-size: 16px;
+  padding: 64px 68px 0 60px; }
+
+.contacts-text-wrap {
+  display: inline-block;
+  width: 55%;
+  height: 100%;
+  font-size: 16px;
+  vertical-align: top;
+  position: absolute;
+  top: 60px; }
+
+.contact-subheader {
+  font-size: 30px;
+  font-family: bebasReg;
+  color: #fff;
+  margin: 0; }
+
+.feedback-desc {
+  font-size: 16px;
+  font-family: arial;
+  color: #fff; }
+  .feedback-desc a {
+    color: #fff; }
+
+.feedback-form > * {
+  display: block;
+  margin: 22px 0;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  height: 24px;
+  outline: none;
+  background: none;
+  border: none;
+  border-bottom: 1px solid #969696;
+  color: #969696;
+  font-family: arial;
+  font-size: 14px; }
+
+.feedback-form input[placeholder] {
+  font-family: bebasReg;
+  font-size: 18px;
+  color: #969696; }
+
+.feedback-form textarea[placeholder] {
+  font-family: bebasReg;
+  font-size: 18px;
+  color: #969696; }
+
+.feedback-form textarea {
+  height: 130px;
+  resize: none; }
+
+.feedback-form input[type=submit] {
+  border-bottom: 0;
+  font-family: bebasReg;
+  font-size: 22px;
+  color: #fff;
+  border: 1px solid #96b71d;
+  display: block;
+  width: auto;
+  padding: 13px 32px 28px;
+  -webkit-border-radius: 20px;
+          border-radius: 20px;
+  -webkit-transition: .2s;
+  transition: .2s; }
+  .feedback-form input[type=submit]:hover {
+    background: #96b71d; }
+
+.contact-header {
+  font-size: 60px;
+  color: #96b71d;
+  font-family: bebasReg;
+  margin: 0 0 30px; }
+
+.contact-text {
+  font-family: arial;
+  color: #fff;
+  font-size: 16px; }
+  .contact-text a {
+    color: #fff; }
+  .contact-text.mod {
+    text-decoration: dotted; }

@@ -542,8 +542,31 @@ body
 	.map-block
 		.map#map
 		.contacts-wrap
-			.feedback-wrap 1
-			.contacts-text-wrap 2
+			.feedback-wrap
+				p.contact-subheader ответы на вопросы
+				p.feedback-desc С удовольствием ответим на все ваши вопросы по телефону 
+					a(href="tel:+74957553951") +7 (495) 755-39-51. 
+				p.feedback-desc Или просто заполните форму ниже:
+				form.feedback-form
+					input(type="text" name="name" placeholder="Имя")
+					input(type="email" name="email" placeholder="Email")
+					input(type="text" name="subject" placeholder="Тема")
+					textarea(name="message", cols="30", rows="10" placeholder="Сообщение")
+					input(type="submit" value="Отправить")
+			.contacts-text-wrap
+				p.contact-header Контакты
+				p.contact-subheader Центральный офис
+				p.contact-text Москва,ул. Лесная 41
+				p.contact-text
+					a(href="mailto:info@isomalto.ru") info@isomalto.ru
+				p.contact-text Телефон:
+					a(href="tel:+74957553951") +7 (495) 755-39-51
+				p.contact-text Пн - Вс: с 9:00 до 21:00
+				p.contact-subheader Пункты выдачи
+				p.contact-text.mod Москва, ул. Лесная 41
+				p.contact-text.mod Москва, ул. Кольская 1 с10
+				p.contact-text.mod Санкт-Петербург,
+				p.contact-text.mod Комендантский пр-т 2,
 script(src="js/libs.min.js")
 script(src="js/common.js")
 script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB2fRMaJqOjBzaRu76T3hU0sBj9hVCBXEk&callback=initMap" async defer)
