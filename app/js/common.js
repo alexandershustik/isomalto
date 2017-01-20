@@ -108,11 +108,9 @@ $('.product-tabs-btns-wrap li button').click(function(){
 
 	$('.product-tabs-btns-wrap li button').removeClass('active');
 	$('.product-tab-desc-wrap').removeClass('active');
-	$('.product-pic').removeClass('active');
 
 	$('.product-tabs-btns-wrap li button[data-href = '+ activeTab +']').addClass('active');
 	$('.product-tab-desc-wrap[data-href = '+ activeTab +']').addClass('active');
-	$('.product-pic[data-href = '+ activeTab +']').addClass('active');
 });
 
 // script-desc-tabs
