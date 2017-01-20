@@ -47,7 +47,7 @@ for( i = 0; i < aboutSlideDomCount; i++){
 	$('.about-indicators-wrap').append('<span data-indicator='+i+'></span>');
 }
 
-aboutInterval =  setInterval( aboutChangeSlide, 5000);
+//aboutInterval =  setInterval( aboutChangeSlide, 5000);
 
 function aboutChangeSlide(){
 	slideDomEl = '.about-slide[data-slide=' + aboutActiveSlide + ']';
