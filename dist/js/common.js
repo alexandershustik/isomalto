@@ -171,7 +171,7 @@ $('.script-tabs a').click(function(){
 		var mark = new google.maps.Marker({
 			position: {lat: 55.718889, lng: 38.626745},
 			map: map,
-			icon: 'img/map-marker.png'
+			icon: '../img/map-marker.png'
 		});
 	}
 

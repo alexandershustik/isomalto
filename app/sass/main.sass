@@ -6,6 +6,7 @@ $mite: #969696
 
 $tablet: 'only screen and (max-width: 1024px)'
 $mobile: 'only screen and (max-width: 768px)'
+$desctop: 'only screen and (max-width: 1440px)'
 html, body
 	margin: 0
 	padding: 0
@@ -22,7 +23,7 @@ h1
 	top: 0
 	background-color: #fff
 	width: 100%
-	padding: 10px 60px
+	padding: 10px 60px 0
 	max-width: 1920px
 	box-sizing: border-box
 	z-index: 100
@@ -400,6 +401,8 @@ h1
 		font-size: 40px
 	@media #{$tablet}
 		margin-top: 50px
+	@media #{$desctop}
+		margin-top: 50px
 .about-slider-wrap
 	position: relative
 	width: 100%
@@ -485,6 +488,7 @@ h1
 	span
 		width: 60px
 		height: 117px
+		cursor: pointer
 	.left
 		background-image: url("../img/about-arrow.png")
 	.right
@@ -501,6 +505,8 @@ h1
 	@media #{$mobile}
 		display: none
 	@media #{$tablet}
+		bottom: 50px
+	@media #{$desctop}
 		bottom: 50px
 	span
 		width: 10px
@@ -574,6 +580,8 @@ h1
 	@media #{$tablet}
 		margin-left: 30px
 		margin-top: 0
+	@media #{$desctop}
+		margin-right: 300px
 	span
 		color: $mite
 		font-family: arial
@@ -618,6 +626,9 @@ h1
 		left: inherit
 		position: relative
 		top: 0
+	@media #{$desctop}
+		width: auto
+		height: 450px
 .product-tabs-btns-wrap
 	margin: 35px 50px 0
 	padding: 0 0 25px
@@ -629,6 +640,8 @@ h1
 	@media #{$tablet}
 		padding: 35px 0 20px
 		box-sizing: border-box
+	@media #{$desctop}
+		width: auto
 	li
 		display: inline-block
 		padding: 0 10px
@@ -660,11 +673,11 @@ h1
 			&.active, &:hover
 				color: $accent
 				text-decoration: none
-				cursor: default
 				&:after
 					background: transparent
 			&.active
 				pointer-events: none
+				cursor: default
 .product-tab-desc-wrap
 	margin: 37px 50px 0
 	width: 711px
@@ -676,6 +689,8 @@ h1
 		width: 100%
 		box-sizing: border-box
 		padding: 10px 20px 0 0
+	@media #{$desctop}
+		width: inherit
 .product-pic
 	position: absolute
 	top: 0
@@ -769,6 +784,8 @@ h1
 		width: 100%
 		height: auto
 	@media #{$tablet}
+		top: 30px
+	@media #{$desctop}
 		top: 30px
 	&:before
 		content: url(../img/test-pic.png)
@@ -864,14 +881,25 @@ h1
 		color: $mite
 		font-family: arial
 		font-size: 14px
-	input[placeholder]
+		&.fail
+			color: #ff281d
+			border-bottom: 1px solid #ff281d
+			font-weight: bold
+		&.success	
+			color: $accent
+			border-bottom: 1px solid $accent
+	input::-webkit-input-placeholder
 		font-family: bebasReg
 		font-size: 18px
 		color: $mite
-	textarea[placeholder]
-		font-family: bebasReg
-		font-size: 18px
+	textarea
 		color: $mite
+		font-family: arial
+		font-size: 14px
+		&::-webkit-input-placeholder
+			font-family: bebasReg
+			font-size: 18px
+			color: $mite
 	textarea
 		height: 130px
 		resize: none
@@ -887,8 +915,15 @@ h1
 		padding: 13px 32px 28px
 		border-radius: 20px
 		transition: .2s
+		cursor: pointer
+		opacity: 1
 		&:hover
 			background: $accent
+		&[disabled]
+			opacity: .5
+			&:hover
+				background: transparent
+				cursor: default
 .test-social
 	position: absolute
 	bottom: 60px
@@ -898,6 +933,8 @@ h1
 		display: none
 	@media #{$tablet}
 		bottom: 30px
+	@media #{$desctop}
+		bottom: 10px
 .script-block
 	height: 100vh
 	max-height: 930px
@@ -915,6 +952,10 @@ h1
 	@media #{$tablet}
 		max-height: 1000px
 		padding-top: 10px
+	@media #{$desctop}
+		height: auto
+		max-height: 100%
+		padding-bottom: 90px
 .script-row
 	font-size: 0
 	height: 500px
@@ -1025,6 +1066,7 @@ h1
 	li
 		display: inline-block
 		margin-right: 10px
+		cursor: pointer
 		a
 			font-family: bebasReg
 			font-size: 18px
@@ -1078,6 +1120,8 @@ h1
 		bottom: 20px
 	@media only screen and (max-width: 1920px)
 		bottom: 0
+	@media #{$desctop}
+		bottom: 20px
 .map-block
 	height: 100vh
 	max-height: 960px
@@ -1107,6 +1151,7 @@ h1
 	height: 590px
 	font-size: 0
 	box-sizing: border-box
+	overflow: hidden
 	@media #{$mobile}
 		position: relative
 		top: 0
@@ -1122,6 +1167,7 @@ h1
 	height: 100%
 	font-size: 16px
 	padding: 64px 68px 0 60px
+	position: relative
 	@media #{$mobile}
 		width: 100%
 		padding: 20px
@@ -1150,6 +1196,9 @@ h1
 	font-family: bebasReg
 	color: #fff
 	margin: 0
+	&.mod
+		margin-top: 30px
+		margin-bottom: 20px
 .feedback-desc
 	font-size: 16px
 	font-family: arial
@@ -1170,14 +1219,25 @@ h1
 		color: $mite
 		font-family: arial
 		font-size: 14px
-	input[placeholder]
+		&.fail
+			color: #ff281d
+			border-bottom: 1px solid #ff281d
+			font-weight: bold
+		&.success	
+			color: $accent
+			border-bottom: 1px solid $accent
+	input::-webkit-input-placeholder
 		font-family: bebasReg
 		font-size: 18px
 		color: $mite
-	textarea[placeholder]
-		font-family: bebasReg
-		font-size: 18px
+	textarea
 		color: $mite
+		font-family: arial
+		font-size: 14px
+		&::-webkit-input-placeholder
+			font-family: bebasReg
+			font-size: 18px
+			color: $mite
 	textarea
 		height: 130px
 		resize: none
@@ -1189,11 +1249,19 @@ h1
 		border: 1px solid $accent
 		display: block
 		width: auto
+		margin: 45px auto 0
 		padding: 13px 32px 28px
 		border-radius: 20px
 		transition: .2s
+		cursor: pointer
+		opacity: 1
 		&:hover
 			background: $accent
+		&[disabled]
+			opacity: .5
+			&:hover
+				background: transparent
+				cursor: default
 .contact-header
 	font-size: 60px
 	color: $accent
@@ -1203,7 +1271,24 @@ h1
 	font-family: arial
 	color: #fff
 	font-size: 16px
+	margin: 0
+	margin-bottom: 10px
 	a
 		color: #fff
-
+.feedback-success-wrap
+	position: absolute
+	top: 0
+	left: 0
+	width: 100%
+	height: 100%
+	background: $bg
+	display: none
+	justify-content: center
+	align-items: center
+	.success
+		display: flex
+	p
+		font-family: bebasReg
+		font-size: 18px
+		color: $accent
 
