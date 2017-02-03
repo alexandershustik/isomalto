@@ -12,7 +12,7 @@ body
 		.list-wrap
 			ul
 				li
-					a(href="#main") главная
+					a(href="#main").active главная
 				li
 					a(href="#about") о продукте
 				li
@@ -362,6 +362,8 @@ body
 						input.test-subj(type="text" name="subject" placeholder="Тема")
 						textarea.test-mess(name="message", cols="30", rows="10" placeholder="Сообщение")
 						input.test-submit(type="submit" value="Хочу" disabled="disabled")
+						.test-success-wrap
+							p Заявка принята
 			.test-social
 				p.social-phone +7-495-755-39-51
 				.social-btns

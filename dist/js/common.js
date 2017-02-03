@@ -171,7 +171,7 @@ $('.script-tabs a').click(function(){
 		var mark = new google.maps.Marker({
 			position: {lat: 55.718889, lng: 38.626745},
 			map: map,
-			icon: '../img/map-marker.png'
+			icon: 'img/map-marker.png'
 		});
 	}
 
@@ -280,6 +280,62 @@ function enableSubmitFeed(){
 			data: th.serialize()
 		}).done(function() {
 			$(".feedback-success-wrap").addClass('success');
+			setTimeout(function() {
+				// Done Functions
+				th.trigger("reset");
+			}, 1000);
 		});
 		return false;
 	});
+
+	$(".test-form").submit(function() { //Change
+		var th = $(this);
+		$.ajax({
+			type: "POST",
+			url: "mail.php", //Change
+			data: th.serialize()
+		}).done(function() {
+			$(".test-success-wrap").addClass('success');
+			setTimeout(function() {
+				// Done Functions
+				th.trigger("reset");
+			}, 1000);
+		});
+		return false;
+	});
+
+//menu-hover
+$( window ).scroll(function() {
+	scrollCords = $(window).scrollTop() + 100;
+	windowHeight = $(window).height();
+	if(scrollCords < windowHeight || scrollCords <= 0){
+		$('[href ^= "#"]').removeClass("active");
+		$('a[href = "#main"]').addClass("active");
+		//$('.slide-indicator').removeClass("active");
+		//$('.video-indicator').addClass("active");
+	}
+	if(scrollCords >= windowHeight && scrollCords < windowHeight*2){
+		$('[href ^= "#"]').removeClass("active");
+		$('a[href = "#about"]').addClass("active");
+		//$('.slide-indicator').removeClass("active");
+		//$('.about-indicator').addClass("active");
+	}
+	if(scrollCords >= windowHeight*3 && scrollCords < windowHeight*4){
+		$('[href ^= "#"]').removeClass("active");
+		$('a[href = "#test"]').addClass("active");
+		//$('.slide-indicator').removeClass("active");
+		//$('.gallery-indicator').addClass("active");
+	}
+	if(scrollCords >= windowHeight*4 && scrollCords < windowHeight*5){
+		$('[href ^= "#"]').removeClass("active");
+		$('a[href = "#scripts"]').addClass("active");
+		//$('.slide-indicator').removeClass("active");
+		//$('.shops-indicator').addClass("active");
+	}
+	if(scrollCords >= windowHeight*5 && scrollCords < windowHeight*6){
+		$('[href ^= "#"]').removeClass("active");
+		$('a[href = "#contacts"]').addClass("active");
+		//$('.slide-indicator').removeClass("active");
+		//$('.shops-indicator').addClass("active");
+	}
+});
