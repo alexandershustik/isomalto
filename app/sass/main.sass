@@ -7,7 +7,7 @@ $mite: #969696
 $tablet: 'only screen and (max-width: 1024px)'
 $mobile: 'only screen and (max-width: 767px)'
 $desctop: 'only screen and (max-width: 1440px)'
-$landscape: 'only screen and (orientation: landscape) and (max-width: 1023px)'
+$landscape: 'only screen and (orientation: landscape) and (max-width: 1024px)'
 $mobile-landscape: 'only screen and (orientation: landscape) and (max-width: 767px)'
 html, body
 	margin: 0
@@ -395,14 +395,16 @@ h1
 	&.mod:before
 		content: url(../img/icon-product.png)
 .about-slider-block
-	height: 100vh
-	max-height: 960px
+	height: 960px
 	width: 100%
 	position: relative
 	box-sizing: border-box
 	overflow: hidden
 	background: url(../img/about-bg.jpg) no-repeat top center, url(../img/about-bottom-bg.jpg) repeat-x bottom left
 	position: relative
+	@media #{$desctop}
+		height: 100vh
+		max-height: 960px
 	@media #{$tablet}
 		height: calc(100vh - 64px)
 		max-height: 640px
@@ -578,19 +580,22 @@ h1
 	bottom: 2px
 	right: -7px
 	text-align: right
+	@media #{$desctop}
+		bottom: -68px
 	@media #{$mobile}
 		display: none
 	@media #{$tablet}
 		bottom: -30px
 		right: -10px
 .product-block
-	height: 100vh
-	max-height: 876px
+	height: 876px
 	width: 100%
 	position: relative
 	box-sizing: border-box
 	overflow: hidden
 	background: #edeced
+	@media #{$desctop}
+		height: 835px
 	@media #{$tablet}
 		max-height: 816px
 	@media #{$mobile}
@@ -788,7 +793,7 @@ h1
 	@media #{$tablet}
 		bottom: 60px
 	@media #{$landscape}
-		bottom: 22px
+		bottom: 42px
 	@media #{$mobile}
 		display: none
 .product-social
@@ -801,7 +806,7 @@ h1
 	@media #{$tablet}
 		bottom: 30px
 	@media #{$landscape}
-		bottom: 4px
+		bottom: 20px
 	@media #{$mobile}
 		display: none
 .test-block
