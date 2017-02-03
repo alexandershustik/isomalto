@@ -5,9 +5,10 @@ $bg: #305b3c
 $mite: #969696
 
 $tablet: 'only screen and (max-width: 1024px)'
-$mobile: 'only screen and (max-width: 768px)'
+$mobile: 'only screen and (max-width: 767px)'
 $desctop: 'only screen and (max-width: 1440px)'
-$landscape: 'only screen and (orientation: landscape)'
+$landscape: 'only screen and (orientation: landscape) and (max-width: 1023px)'
+$mobile-landscape: 'only screen and (orientation: landscape) and (max-width: 767px)'
 html, body
 	margin: 0
 	padding: 0
@@ -226,25 +227,30 @@ h1
 	position: absolute
 	top: 44%
 	left: 22%
+	@media #{$tablet}
+		top: 350px
+		width: 70%
+		margin: 0 auto
+		left: 0
+		right: 0
+		display: block
+	@media #{$landscape}
+		margin: 0
+		left: -100px
 	@media #{$mobile}
 		top: 100px
 		left: 0
 		right: 0
 		text-align: center
-	@media #{$tablet}
-		top: 200px
-	@media #{$landscape}
-		top: 100px
+		width: 100%
 .slide-header
 	font-size: 90px
 	font-family: bebasReg
 	color: $accent
 	margin: 0
 	padding: 0
-	@media #{$tablet}
-		font-size: 60px
-	@media #{$landscape}
-		font-size: 30px
+	@media #{$mobile}
+		font-size: 50px
 .slider-text
 	font-family: bebasReg
 	color: $mite
@@ -293,6 +299,8 @@ h1
 		width: 60px
 		height: 117px
 		cursor: pointer
+	@media #{$tablet}
+		padding: 0 10px
 	@media #{$mobile}
 		display: none
 	.left
@@ -320,6 +328,8 @@ h1
 	@media #{$tablet}
 		margin-bottom: 30px
 		margin-right: 30px
+	@media #{$mobile-landscape}
+		display: none
 .social-btns
 	display: inline-block
 	a
@@ -393,13 +403,13 @@ h1
 	overflow: hidden
 	background: url(../img/about-bg.jpg) no-repeat top center, url(../img/about-bottom-bg.jpg) repeat-x bottom left
 	position: relative
-	@media #{$mobile}
-		max-height: 568px
-		height: calc(100vh - 64px)
 	@media #{$tablet}
 		height: calc(100vh - 64px)
 		max-height: 640px
 		position: relative
+	@media #{$mobile}
+		max-height: 100%
+		height: auto
 .about-slider-header
 	text-align: center
 	font-size: 60px
@@ -409,15 +419,15 @@ h1
 	margin-top: 150px
 	span
 		color: $accent
-	@media #{$mobile}
-		box-sizing: border-box
-		padding-top: 30px
-		margin: 0
-		font-size: 40px
-	@media #{$tablet}
-		margin-top: 50px
 	@media #{$desctop}
 		margin-top: 50px
+	@media #{$tablet}
+		margin-top: 30px
+		margin-bottom: 10px
+	@media #{$mobile}
+		box-sizing: border-box
+		padding-top: 10px
+		margin: 0
 .about-slider-wrap
 	position: relative
 	width: 100%
@@ -435,6 +445,8 @@ h1
 	position: absolute
 	top: 55px
 	left: 100%
+	@media #{$desctop}
+		top: 155px
 	@media #{$mobile}
 		top: 20px
 	@media #{$tablet}
@@ -498,6 +510,8 @@ h1
 	position: absolute
 	left: 0
 	top: calc(50% - 18px)
+	@media #{$desctop}
+		padding: 0
 	@media #{$tablet}
 		display: none
 	span
@@ -577,27 +591,27 @@ h1
 	box-sizing: border-box
 	overflow: hidden
 	background: #edeced
+	@media #{$tablet}
+		max-height: 816px
 	@media #{$mobile}
 		max-height: 100%
 		height: auto
-	@media #{$tablet}
-		max-height: 816px
 .product-header
 	margin: 45px 0 0 450px
 	font-size: 60px
 	color: $accent
 	font-family: bebasReg
-	@media #{$mobile}
-		margin: 0
-		text-align: center
-		font-size: 40px
-		padding: 0 20px
 	@media #{$tablet}
 		margin-left: 30px
 		margin-top: 0
 		margin-right: 0!important
 	@media #{$desctop}
 		margin-right: 300px
+	@media #{$mobile}
+		margin: 0
+		text-align: center
+		font-size: 40px
+		padding: 0 20px
 	span
 		color: $mite
 		font-family: arial
@@ -614,13 +628,13 @@ h1
 	margin-top: 50px
 	position: relative
 	overflow: hidden
-	@media #{$mobile}
-		margin-top: 10px
-		height: auto
 	@media #{$tablet}
 		padding: 0 10px
 		box-sizing: border-box
 		//height: 585px
+	@media #{$mobile}
+		margin-top: 10px
+		height: auto
 .product-tabs-wrap
 	width: 1210px
 	height: 440px
@@ -629,6 +643,16 @@ h1
 	top: 50px
 	left: 710px
 	z-index: 2
+	@media #{$desctop}
+		width: 768px
+		left: 280px
+		//height: 450px
+	@media #{$tablet}
+		width: 100%
+		left: inherit
+		position: relative
+		top: 0
+		height: 470px
 	@media #{$mobile}
 		width: 100%
 		position: relative
@@ -637,14 +661,6 @@ h1
 		box-sizing: content-box
 		height: auto
 		padding: 20px
-	@media #{$tablet}
-		width: 100%
-		left: inherit
-		position: relative
-		top: 0
-	@media #{$desctop}
-		width: auto
-		//height: 450px
 .product-tabs-btns-wrap
 	margin: 35px 50px 0
 	padding: 0 0 25px
@@ -661,6 +677,8 @@ h1
 	li
 		display: inline-block
 		padding: 0 10px
+		@media #{$mobile}
+			padding: 0
 		&:first-child
 			padding-left: 0
 		&:last-child
@@ -699,16 +717,20 @@ h1
 .product-tab-desc-wrap
 	margin: 37px 50px 0
 	width: 711px
+	padding: 0
 	display: none
 	&.active
 		display: block
+	@media #{$desctop}
+		width: inherit
+		box-sizing: border-box
+		padding: 37px 50px 0
+		margin: 0
 	@media #{$mobile}
 		margin: 0
 		width: 100%
 		box-sizing: border-box
 		padding: 10px 20px 0 0
-	@media #{$desctop}
-		width: inherit
 .product-pic
 	position: absolute
 	top: 0
@@ -761,19 +783,27 @@ h1
 	position: absolute
 	bottom: 80px
 	left: 118px
+	@media #{$desctop}
+		bottom: 50px
+	@media #{$tablet}
+		bottom: 60px
+	@media #{$landscape}
+		bottom: 22px
 	@media #{$mobile}
 		display: none
-	@media #{$tablet}
-		bottom: inherit
 .product-social
 	position: absolute
 	bottom: 70px
 	right: 60px
 	text-align: right
+	@media #{$desctop}
+		bottom: 30px
+	@media #{$tablet}
+		bottom: 30px
+	@media #{$landscape}
+		bottom: 4px
 	@media #{$mobile}
 		display: none
-	@media #{$tablet}
-		bottom: inherit
 .test-block
 	height: 100vh
 	max-height: 960px
@@ -782,6 +812,11 @@ h1
 	box-sizing: border-box
 	overflow: hidden
 	background: url(../img/test-bg.jpg) repeat
+	@media #{$desctop}
+		max-height: 730px
+	@media #{$tablet}
+		max-height: inherit
+		height: 720px
 	@media #{$mobile}
 		max-height: inherit
 		height: auto
@@ -885,6 +920,9 @@ h1
 .test-form
 	margin: 80px 44px 0
 	position: relative
+	@media #{$mobile}
+		margin-top: 60px
+		margin-bottom: 20px
 	&>*
 		display: block
 		margin: 22px 0
@@ -964,12 +1002,12 @@ h1
 	bottom: 60px
 	right: 60px
 	text-align: right
-	@media #{$mobile}
-		display: none
-	@media #{$tablet}
-		bottom: 30px
 	@media #{$desctop}
 		bottom: 10px
+	@media #{$tablet}
+		bottom: 20px
+	@media #{$mobile}
+		display: none
 .script-block
 	height: 100vh
 	max-height: 930px
@@ -979,18 +1017,19 @@ h1
 	overflow: hidden
 	background: url(../img/script-bg.png) repeat-x left bottom #f6f6f9
 	padding-top: 86px
-	@media #{$mobile}
-		height: auto
-		max-height: inherit
-		padding-top: 0
-		overflow: visible
-	@media #{$tablet}
-		max-height: 1000px
-		padding-top: 10px
 	@media #{$desctop}
 		height: auto
 		max-height: 100%
 		padding-bottom: 90px
+	@media #{$tablet}
+		max-height: 1000px
+		padding-top: 10px
+		height: 760px
+	@media #{$mobile}
+		height: 760px
+		max-height: inherit
+		padding-top: 0
+		overflow: visible
 .script-row
 	font-size: 0
 	height: 500px
@@ -1027,11 +1066,13 @@ h1
 	width: 100%
 	height: 230px
 	margin-top: 500px
+	@media #{$tablet}
+		margin-top: 460px
+	@media #{$landscape}
+		margin-top: -30px
 	@media #{$mobile}
 		height: auto
 		margin-top: 50px
-	@media #{$tablet}
-		margin-top: 20px
 .script-tabs
 	padding: 0
 	margin: 0
@@ -1073,7 +1114,7 @@ h1
 				font-family: arial
 				font-size: 16px
 				line-height: 25px
-				@media #{$mobile}
+				@media #{$tablet}
 					display: none
 			span
 				display: block
@@ -1134,6 +1175,8 @@ h1
 	color: $mite
 	transition: .2s
 	z-index: -1
+	height: 0
+	overflow: hidden
 	@media #{$mobile}
 		display: none
 		padding: 0 20px
@@ -1141,6 +1184,8 @@ h1
 	&.active
 		opacity: 1
 		z-index: 1
+		height: auto
+		overflow: visible
 		@media #{$mobile}
 			display: block
 .script-video iframe
@@ -1191,6 +1236,8 @@ h1
 	font-size: 0
 	box-sizing: border-box
 	overflow: hidden
+	@media #{$tablet}
+		width: 630px
 	@media #{$mobile}
 		position: relative
 		top: 0
@@ -1198,8 +1245,6 @@ h1
 		box-sizing: border-box
 		height: auto
 		padding-top: 30px
-	@media #{$tablet}
-		width: 630px
 .feedback-wrap
 	display: inline-block
 	width: 45%
@@ -1207,13 +1252,13 @@ h1
 	font-size: 16px
 	padding: 64px 68px 0 60px
 	position: relative
-	@media #{$mobile}
-		width: 100%
-		padding: 20px
 	@media #{$tablet}
 		padding: 30px
 		box-sizing: border-box
 		width: 390px
+	@media #{$mobile}
+		width: 100%
+		padding: 20px
 .contacts-text-wrap
 	display: inline-block
 	width: 55%
@@ -1242,6 +1287,7 @@ h1
 	font-size: 16px
 	font-family: arial
 	color: #fff
+	line-height: 18px
 	a
 		color: #fff
 .feedback-form
