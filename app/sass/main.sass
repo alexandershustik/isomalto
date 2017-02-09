@@ -69,8 +69,8 @@ h1
 				border: 2px solid $bg
 				border-radius: 30px
 				&:hover
-					background: $bg
-					color: $accent
+					background: $accent
+					color: #fff
 .main-mobile-menu
 	display: none
 	padding: 10px
@@ -219,14 +219,14 @@ h1
 		object-fit: cover
 		height: 100%
 		width: 100%
-		@media #{$mobile}
-			width: 100%
 		@media #{$tablet}
 			width: 100%
+		@media #{$mobile}
+			width: 400%
 .text-block
 	position: absolute
 	top: 44%
-	left: 22%
+	left: 12%
 	@media #{$tablet}
 		top: 350px
 		width: 70%
@@ -238,7 +238,7 @@ h1
 		margin: 0
 		left: -100px
 	@media #{$mobile}
-		top: 100px
+		top: 200px
 		left: 0
 		right: 0
 		text-align: center
@@ -263,6 +263,8 @@ h1
 		font-family: arial
 		font-size: 16px
 		display: block
+		@media #{$mobile}
+			display: none
 	@media #{$tablet}
 		margin-bottom: 30px
 		margin-top: 10px
@@ -273,7 +275,7 @@ h1
 	color: $accent
 	border-radius: 50px
 	border: 2px solid $accent
-	padding: 20px 33px
+	padding: 20px 33px 11px
 	text-decoration: none
 	font-size: 27px
 	margin-right: -30px
@@ -317,7 +319,7 @@ h1
 	align-items: center
 	width: 100%
 .social-wrap
-	margin-bottom: 65px
+	margin-bottom: 5px
 	margin-right: 64px
 	@media #{$mobile}
 		position: absolute
@@ -403,7 +405,7 @@ h1
 	background: url(../img/about-bg.jpg) no-repeat top center, url(../img/about-bottom-bg.jpg) repeat-x bottom left
 	position: relative
 	@media #{$desctop}
-		height: 100vh
+		height: 960px
 		max-height: 960px
 	@media #{$tablet}
 		height: calc(100vh - 64px)
@@ -581,7 +583,7 @@ h1
 	right: -7px
 	text-align: right
 	@media #{$desctop}
-		bottom: -68px
+		bottom: 0
 	@media #{$mobile}
 		display: none
 	@media #{$tablet}
@@ -595,7 +597,7 @@ h1
 	overflow: hidden
 	background: #edeced
 	@media #{$desctop}
-		height: 835px
+		height: 885px
 	@media #{$tablet}
 		max-height: 816px
 	@media #{$mobile}
@@ -640,6 +642,7 @@ h1
 	@media #{$mobile}
 		margin-top: 10px
 		height: auto
+		padding: 0
 .product-tabs-wrap
 	width: 1210px
 	height: 440px
@@ -979,6 +982,7 @@ h1
 		opacity: 1
 		&:hover
 			background: $accent
+			color: $bg
 		&[disabled]
 			opacity: .5
 			&:hover
@@ -1233,7 +1237,7 @@ h1
 .contacts-wrap
 	z-index: 1
 	position: absolute
-	top: 113px
+	top: 60px
 	right: 0
 	background: $bg
 	width: 700px
@@ -1285,9 +1289,15 @@ h1
 	font-family: bebasReg
 	color: #fff
 	margin: 0
+	@media #{$mobile}
+		display: none
 	&.mod
 		margin-top: 30px
 		margin-bottom: 20px
+	&.mob
+		display: none
+		@media #{$mobile}
+			display: block
 .feedback-desc
 	font-size: 16px
 	font-family: arial
@@ -1340,12 +1350,13 @@ h1
 		display: block
 		width: auto
 		margin: 45px auto 0
-		padding: 13px 32px 28px
+		padding: 9px 32px 28px
 		border-radius: 20px
 		transition: .2s
 		cursor: pointer
 		opacity: 1
 		&:hover
+			color: $bg
 			background: $accent
 		&[disabled]
 			opacity: .5

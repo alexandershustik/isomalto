@@ -90,8 +90,8 @@ h1 {
         -webkit-border-radius: 30px;
                 border-radius: 30px; }
         .main-menu .list-wrap .shop-link a:hover {
-          background: #305b3c;
-          color: #96b71d; }
+          background: #96b71d;
+          color: #fff; }
 
 .main-mobile-menu {
   display: none;
@@ -283,17 +283,17 @@ h1 {
        object-fit: cover;
     height: 100%;
     width: 100%; }
-    @media only screen and (max-width: 767px) {
-      .slide-wrap img {
-        width: 100%; } }
     @media only screen and (max-width: 1024px) {
       .slide-wrap img {
         width: 100%; } }
+    @media only screen and (max-width: 767px) {
+      .slide-wrap img {
+        width: 400%; } }
 
 .text-block {
   position: absolute;
   top: 44%;
-  left: 22%; }
+  left: 12%; }
   @media only screen and (max-width: 1024px) {
     .text-block {
       top: 350px;
@@ -308,7 +308,7 @@ h1 {
       left: -100px; } }
   @media only screen and (max-width: 767px) {
     .text-block {
-      top: 100px;
+      top: 200px;
       left: 0;
       right: 0;
       text-align: center;
@@ -336,6 +336,9 @@ h1 {
     font-family: arial;
     font-size: 16px;
     display: block; }
+    @media only screen and (max-width: 767px) {
+      .slider-text span {
+        display: none; } }
   @media only screen and (max-width: 1024px) {
     .slider-text {
       margin-bottom: 30px;
@@ -350,7 +353,7 @@ h1 {
   -webkit-border-radius: 50px;
           border-radius: 50px;
   border: 2px solid #96b71d;
-  padding: 20px 33px;
+  padding: 20px 33px 11px;
   text-decoration: none;
   font-size: 27px;
   margin-right: -30px;
@@ -423,7 +426,7 @@ h1 {
   width: 100%; }
 
 .social-wrap {
-  margin-bottom: 65px;
+  margin-bottom: 5px;
   margin-right: 64px; }
   @media only screen and (max-width: 767px) {
     .social-wrap {
@@ -525,7 +528,7 @@ h1 {
   position: relative; }
   @media only screen and (max-width: 1440px) {
     .about-slider-block {
-      height: 100vh;
+      height: 960px;
       max-height: 960px; } }
   @media only screen and (max-width: 1024px) {
     .about-slider-block {
@@ -758,7 +761,7 @@ h1 {
   text-align: right; }
   @media only screen and (max-width: 1440px) {
     .about-social {
-      bottom: -68px; } }
+      bottom: 0; } }
   @media only screen and (max-width: 767px) {
     .about-social {
       display: none; } }
@@ -777,7 +780,7 @@ h1 {
   background: #edeced; }
   @media only screen and (max-width: 1440px) {
     .product-block {
-      height: 835px; } }
+      height: 885px; } }
   @media only screen and (max-width: 1024px) {
     .product-block {
       max-height: 816px; } }
@@ -831,7 +834,8 @@ h1 {
   @media only screen and (max-width: 767px) {
     .product-wrap {
       margin-top: 10px;
-      height: auto; } }
+      height: auto;
+      padding: 0; } }
 
 .product-tabs-wrap {
   width: 1210px;
@@ -1238,7 +1242,8 @@ h1 {
     cursor: pointer;
     opacity: 1; }
     .test-form input[type=submit]:hover {
-      background: #96b71d; }
+      background: #96b71d;
+      color: #305b3c; }
     .test-form input[type=submit][disabled] {
       opacity: .5; }
       .test-form input[type=submit][disabled]:hover {
@@ -1571,7 +1576,7 @@ h1 {
 .contacts-wrap {
   z-index: 1;
   position: absolute;
-  top: 113px;
+  top: 60px;
   right: 0;
   background: #305b3c;
   width: 700px;
@@ -1635,9 +1640,17 @@ h1 {
   font-family: bebasReg;
   color: #fff;
   margin: 0; }
+  @media only screen and (max-width: 767px) {
+    .contact-subheader {
+      display: none; } }
   .contact-subheader.mod {
     margin-top: 30px;
     margin-bottom: 20px; }
+  .contact-subheader.mob {
+    display: none; }
+    @media only screen and (max-width: 767px) {
+      .contact-subheader.mob {
+        display: block; } }
 
 .feedback-desc {
   font-size: 16px;
@@ -1696,7 +1709,7 @@ h1 {
   display: block;
   width: auto;
   margin: 45px auto 0;
-  padding: 13px 32px 28px;
+  padding: 9px 32px 28px;
   -webkit-border-radius: 20px;
           border-radius: 20px;
   -webkit-transition: .2s;
@@ -1704,6 +1717,7 @@ h1 {
   cursor: pointer;
   opacity: 1; }
   .feedback-form input[type=submit]:hover {
+    color: #305b3c;
     background: #96b71d; }
   .feedback-form input[type=submit][disabled] {
     opacity: .5; }

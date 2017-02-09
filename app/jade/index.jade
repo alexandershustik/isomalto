@@ -27,7 +27,6 @@ body
 		.logo-wrap
 			img(src="img/logo.jpg", alt="logo")
 		.mobile-menu-btn 
-			span меню
 			.mob-menu-icon
 				span
 				span
@@ -311,8 +310,8 @@ body
 						span попробовать 
 						| бесплатно
 					form.test-form
-						input.test-name(type="text" name="name" placeholder="Имя")
-						input.test-email(type="email" name="email" placeholder="Email")
+						input.test-name(type="text" name="name" placeholder="Имя*")
+						input.test-email(type="email" name="email" placeholder="Email*")
 						input.test-subj(type="text" name="subject" placeholder="Тема")
 						textarea.test-mess(name="message", cols="30", rows="10" placeholder="Сообщение")
 						input.test-submit(type="submit" value="Хочу" disabled="disabled")
@@ -519,6 +518,7 @@ body
 			.contacts-wrap
 				.feedback-wrap
 					p.contact-subheader ответы на вопросы
+					p.contact-subheader.mob Контакты
 					p.feedback-desc С удовольствием ответим на все ваши вопросы по телефону 
 						a(href="tel:+74957553951") +7 (495) 755-39-51. 
 					p.feedback-desc Или просто заполните форму ниже:
